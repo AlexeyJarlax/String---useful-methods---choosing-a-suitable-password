@@ -1,0 +1,17 @@
+public class Practicum {
+    public static void main(String[] args) {
+        String example = "секс секс секс секс секс секс секс";
+        System.out.println(example.replace("секс", "сон")); // выведет "три два, три два"
+        System.out.println(example.replaceFirst("секс", "сон")); // выведет "три два, раз два"
+    }
+}
+
+
+Результат
+сон сон сон сон сон сон сон
+сон секс секс секс секс секс секс
+
+
+Для замены строк в классе String реализованы два метода. 
+Первый String replace(String target, String replacement) подменяет все вхождения подстроки target на строку replacement. 
+Второй String replaceFirst(String target, String replacement) заменяет лишь первое вхождение искомой подстроки.
