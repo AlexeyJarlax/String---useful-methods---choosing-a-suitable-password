@@ -1,0 +1,30 @@
+public class Practicum {
+    public static void main(String[] args) {
+        FindRepeats check = new FindRepeats();
+        int count = check.numberOfRepeats("раз, раз, раз", "раз");
+        System.out.println(count);
+    }
+}
+
+public class FindRepeats {
+    int numberOfRepeats(String text, String substring) {
+
+        int count = 0;
+        while (text.contains(substring)) {
+            count++;
+            text = text.substring(text.indexOf(substring) + substring.length());
+        }
+        return count;
+    }
+}
+
+
+Вывод
+давайте посчитаем сколько раз повторяется кусок текста "сок" сок, сосок, сосунок
+сок
+4
+
+
+куда вбивается текст, и в результате вы получаете количество повторов искомого текста или символа.
+Попробуйте реализовать такой подсчёт на Java. Напишите метод int numberOfRepeats(String text, String substring), 
+который будет возвращать число повторения подстроки substring в переданном тексте text.
