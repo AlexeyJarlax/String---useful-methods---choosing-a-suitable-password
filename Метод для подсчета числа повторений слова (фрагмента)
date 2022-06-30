@@ -1,3 +1,7 @@
+Напишите метод int numberOfRepeats(String text, String substring), 
+который будет возвращать число повторения подстроки substring в переданном тексте text.
+
+
 public class Practicum {
     public static void main(String[] args) {
         FindRepeats check = new FindRepeats();
@@ -25,6 +29,4 @@ public class FindRepeats {
 4
 
 
-куда вбивается текст, и в результате вы получаете количество повторов искомого текста или символа.
-Попробуйте реализовать такой подсчёт на Java. Напишите метод int numberOfRepeats(String text, String substring), 
-который будет возвращать число повторения подстроки substring в переданном тексте text.
+
