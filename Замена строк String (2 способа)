@@ -1,3 +1,9 @@
+
+Для замены строк в классе String реализованы два метода. 
+Первый String replace(String target, String replacement) подменяет все вхождения подстроки target на строку replacement. 
+Второй String replaceFirst(String target, String replacement) заменяет лишь первое вхождение искомой подстроки.
+
+
 public class Practicum {
     public static void main(String[] args) {
         String example = "секс секс секс секс секс секс секс";
@@ -11,7 +17,24 @@ public class Practicum {
 сон сон сон сон сон сон сон
 сон секс секс секс секс секс секс
 
+========================
+Для применения нескольких условий в одном тексте используется точечная нотация и логическая последовательность применений
 
-Для замены строк в классе String реализованы два метода. 
-Первый String replace(String target, String replacement) подменяет все вхождения подстроки target на строку replacement. 
-Второй String replaceFirst(String target, String replacement) заменяет лишь первое вхождение искомой подстроки.
+
+public class Practicum {
+    public static void main(String[] args) {
+        String rules = "На зелёный цвет — стой на месте;\n" +
+            "на зелёный цвет — приготовься;\n" +
+            "на зелёный — осмотрись, а затем смело шагай.";
+
+        String replaced = rules;
+        System.out.println(replaced.replaceFirst("зелёный", "красный").replaceFirst("зелёный", "жёлтый").replace("цвет", "свет"));
+    }
+}
+
+
+Результат
+На красный свет — стой на месте;
+на жёлтый свет — приготовься;
+на зелёный — осмотрись, а затем смело шагай.
+
