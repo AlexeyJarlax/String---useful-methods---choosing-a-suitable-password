@@ -1,7 +1,5 @@
 Конструктор приветствия при помощи StringBuilder. Начальным значением конструктор принимает стрингу из переменной start. 
-
 Сначала создайте экземпляр StringBuilder, а затем добавьте в него три подстроки.
-
 Метод toString преобразует содержимое внутреннего буфера StringBuilder в простую строку и возвращает её в качестве результата.
 
 
@@ -28,5 +26,102 @@ public class Practicum {
 Результат
 Привет! Меня зовут <ваше имя>. Я из города <ваш город>.
 
+====
+
+Вставка в середину строки.
+Метод insert(int index, String str) позволяет добавить подстроку или символ в середину StringBuilder. 
+Для этого нужно передать в метод индекс символа, с которого должна быть вставка:
+
+
+public class Practicum {
+    public static void main(String[] args) {
+        StringBuilder example = new StringBuilder("Helo!");
+        example.insert(3, "l"); // добавили "l" на 3-ю позицию перед "o"
+        System.out.println(example.toString()); // выведет строку "Hello!"
+    }
+}
+
+
+Результат
+Hello!
+
+====
+
+Замена подстроки или элемента.
+Замена внутри строк StringBuilder происходит при помощи метода replace(int indexFromInclusive, int indexToExclusive, String replacement). 
+Важно запомнить, что первый индекс при замене берётся включительно, а второй — нет.    
+
+
+public class Practicum {
+    public static void main(String[] args) {
+        StringBuilder builder = new StringBuilder("Hillo, world!");
+        builder.replace(1,2, "e");
+        builder.replace(7,13, "java!");
+
+        System.out.println(builder.toString());// выведет строку "Hello, java!"
+    }
+}
+
+
+Результат
+Hello, java!
+
+====
+
+Удаление по индексу.
+Для удаления одного или нескольких элементов понадобятся методы deleteCharAt(int index) и delete(int startIndexInclusive, int endIndexExclusive). 
+При удалении по двум индексам, первый индекс берётся включительно, а второй нет (аналогично методу замены replace(int, int, String)).
+
+
+public class Practicum {
+    public static void main(String[] args) {
+        StringBuilder builder = new StringBuilder("Hhellllllo!");
+        builder.deleteCharAt(1); // удалит элемент 'h'
+        builder.delete(2, 6);    // удалит все лишние символы 'l'
+        System.out.println(builder.toString()); // выведет строку "Hello!"
+    }
+}
+
+
+Результат
+Hello!
+
+====
+
+Отзеркаливание текста.
+Перевернуть строку позволяет метод reverse().
+
+
+public class Practicum {
+    public static void main(String[] args) {
+        StringBuilder builder = new StringBuilder("!dlrow ,olleH");
+        builder.reverse();
+        System.out.println(builder.toString()); // выведет "Hello, world!"
+    }
+}
+
+
+Результат
+Hello, world!
+
+====
+
+Обрезка строки.
+Метод setLength(int newLength) позволяет оставить только заданное количество символов. Для этого нужно передать в него нужную длину строки.
+
+
+public class Practicum {
+    public static void main(String[] args) {
+        StringBuilder builder = new StringBuilder("hellodghkwennalmc/ skm");
+        builder.setLength(5); // останется только пять символов
+        System.out.println(builder.toString()); // выведет строку "hello"
+    }
+}
+
+
+Результат
+hello
+
+====
 
 другие методы стандартной библиотеки StringBuilder https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html 
