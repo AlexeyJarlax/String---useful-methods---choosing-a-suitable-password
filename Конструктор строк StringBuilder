@@ -1,0 +1,32 @@
+Конструктор приветствия при помощи StringBuilder. Начальным значением конструктор принимает стрингу из переменной start. 
+
+Сначала создайте экземпляр StringBuilder, а затем добавьте в него три подстроки.
+
+Метод toString преобразует содержимое внутреннего буфера StringBuilder в простую строку и возвращает её в качестве результата.
+
+
+public class Practicum {
+    public static void main(String[] args) {
+
+        String start = "Привет! Меня зовут ";
+
+        StringBuilder hello = new StringBuilder(start); // создайте StringBuilder с началом start
+
+        hello.append("<ваше имя>"); 
+        hello.append(". Я из города ");
+        hello.append("<ваш город>.");
+        // добавьте подстроку "<ваше имя>"
+        // добавьте подстроку ". Я из города "
+        // добавьте подстроку "<ваш город>."
+
+        String asString = hello.toString();
+        System.out.println(asString);
+    }
+}
+
+
+Результат
+Привет! Меня зовут <ваше имя>. Я из города <ваш город>.
+
+
+другие методы стандартной библиотеки StringBuilder https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html 
