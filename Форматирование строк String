@@ -96,7 +96,59 @@ public class Practicum {
 
 Результат
 Пицца, 1 шт., 310.50
-
 Чай, 1 шт., 113.30
-
 Печенье, 1 уп., 75.75
+
+====
+
+Задачка практикума. Ограничений на количество символов в строках наименования товара, количества и цены больше нет. 
+При этом самая длинная строка с наименованием товара и его количеством должна разделяться ровно двумя пробелами. 
+То же самое между количеством и ценой.
+Для входных данных:
+{"Пицца, 1 шт., 310.50", "Чай, 2 шт., 113.30", "Печенье, 1 уп., 75.75"}
+Такой вывод программы корректен:
+Пицца,         1003 шт.,  311431.50
+Чай,           12 шт.,    1359.60
+Печенье,       1 уп.,     75.75
+Нить красная,  1 клубок,  12.23 
+Вам в помощь реализована функция int findMaxLenght(String[] elements). Она пройдёт по массиву строк и вернёт размер максимального элемента этого массива.
+
+
+public class CheckPrinterImproved {
+    private int findMaxLength(String[] elements) {
+        int max = 0;
+        for (String e : elements) {
+            if (e.length() > max) {
+                max = e.length();
+            }
+        }
+        return max;
+    }
+
+    public void printCheck(String[] items) {
+        String[] names = new String[items.length];
+        String[] quantity = new String[items.length];
+        String[] price = new String[items.length];
+        for (int i = 0; i < items.length; i++) {
+            String[] strings = items[i].split(", ");
+            names[i] = strings[0];
+            quantity[i] = strings[1];
+            price[i] = strings[2];
+        }
+        int first = findMaxLength(names) + 2;
+        int second = findMaxLength(quantity) + 2;
+        for (int i = 0; i < names.length; i++) {
+
+            System.out.printf("%-10s,  %-7s,  %-8s", names[i], quantity[i], price[i]);
+        }
+
+    }
+}
+
+
+Вывод
+Пицца, 1 шт., 310.50, Чай, 2 шт., 113.30, Печенье, 1 уп., 75.75
+
+Пицца     ,  1 шт.  ,  310.50  
+Чай       ,  2 шт.  ,  113.30  
+Печенье   ,  1 уп.  ,  75.75   
